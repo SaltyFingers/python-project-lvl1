@@ -4,7 +4,5 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-           make lint
-           poetry run flake8 brain_games
+      - run: poetry run flake8 brain_games
       
