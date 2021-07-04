@@ -22,14 +22,9 @@ jobs:
         run: |
           pip install poetry
           make install
-      - name: Install flake
-        run: |
-          pip install flake8
-          make update
-          make install
       - name: Run linter and pytest
         run: |
-          make lint
+          poetry run flake8 brain_games
         
       
       
