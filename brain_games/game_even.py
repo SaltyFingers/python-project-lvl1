@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-import random 
+import random
+
 import prompt
 
 
@@ -13,7 +14,7 @@ def even_logic():
     name = welcome()
     i = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    while i < 3:
+    for i in range(3):
         number = random.randint(1, 100)
         if number % 2 == 0:
             correct_answer = 'yes'
