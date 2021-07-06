@@ -19,11 +19,11 @@ def calc_logic():
     for i in range(3):
         number_1 = randint(1, 100)
         number_2 = randint(1, 100)
-        op = choice(ops_list)
-        if op == operator.add:
+        current_operator = choice(ops_list)
+        if current_operator == operator.add:
             question = (str(number_1) + ' + ' + str(number_2) + ' =')
             correct_answer = number_1 + number_2
-        elif op == operator.mul:
+        elif current_operator == operator.mul:
             question = (str(number_1) + ' * ' + str(number_2) + ' =')
             correct_answer = number_1 * number_2
         else:
