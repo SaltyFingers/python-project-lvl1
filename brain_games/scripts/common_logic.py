@@ -1,6 +1,7 @@
 import prompt
 import random
-from brain_games.games import *
+#from brain_games import game_even, game_calc, game_gcd, brain_progression, brain_prime
+#from brain_games.scripts import brain_even, brain_calc, brain_gcd, brain_progression, brain_prime
 
 def welcome_user():
         print('Welcome to the Brain Games!')
@@ -9,18 +10,36 @@ def welcome_user():
         return name
 
 
-def choose_the_game():
-    game = prompt.string('Which game do you want to begin?\
-    \n1. Even \n2. Calc \n3. GCD \n4. \n5.')        
+# def choose_the_game():
+#     name = welcome_user()
+#     print('Which game do you want to begin?:\
+#     \n1. Even \n2. Calc \n3. GCD \n4. Progression \n5. Prime\
+#     \nEnter, for example, 1 or Even or 1. Even')
+#     def games():
+#         game = prompt.string('Time to choose: ')
+#         if game == 1 or str(game) == 'Even' or str(game) == '1. Even':
+#             brain_even()
+#         elif game == 2 or str(game) == 'Calc' or str(game) == '2. Calc':
+#             brain_calc()
+#         elif game == 3 or game == 'GCD' or game == '3. GCD':
+#             brain_gcd()
+#         elif game == 4 or game == 'Progression' or game == '4. Progression':
+#             brain_progression()
+#         elif game == 5 or game == 'Prime' or game == '5. Prime':
+#             brain_prime()
+#         else:
+#             print('Please, ' + name + ', enter the correct name' )
+#         games()
 
 
-def engine(question, correct_answer, answer, name):
+def engine(question, correct_answer, name):
     index = 0
     for index in range(3):
-        
-        
+                
         print(question)
         
+        answer = prompt.string('Your answer: ')
+
         if int(answer) == correct_answer:
             print('Correct!\nLet\'s try this one!')
             index += 1
@@ -32,12 +51,8 @@ def engine(question, correct_answer, answer, name):
                 index = 0
             else:
                 return False
-        
-
-    
-    
-    
-    
+    print('Congratulations, ' + name)
+ 
     # def random_number():
     #     random_number = random.randint(1,100)
     #     return random_number
@@ -45,6 +60,3 @@ def engine(question, correct_answer, answer, name):
 
 if __name__ == "__main__":
     engine()
-
-
-
