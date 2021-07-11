@@ -1,33 +1,31 @@
 #!/usr/bin/env python
-import random
 
-import prompt
-
-
-def welcome():
-    name = prompt.string('Hello there!\nMay I have your name, friend?\nMy name is ')
-    print('Nice to meet you, ' + name + '!')
-    return name
+from brain_games.scripts.common_logic import (
+    count,
+    engine,
+    random_number,
+    welcome_user,
+)
 
 
 def even_logic():
-    name = welcome()
-    i = 0
+    name = welcome_user()
+    x = count()
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    for i in range(3):
-        number = random.randint(1, 100)
+    questions = []
+    correct_answers = []
+    j = 0
+    for j in range (x):
+        number = random_number()
         if number % 2 == 0:
             correct_answer = 'yes'
         else:
             correct_answer = 'no'
-        print('Question: ' + str(number))
-        answer = prompt.string('Your answer: ')
-        if number % 2 == 0 and answer == 'yes' or number % 2 != 0 and answer == 'no':
-            print('Correct!')
-            i = i +  1 
-        else:
-            print("'" + answer + "'" + ' is wrong answer :c. Correct answer was ' + "'" + correct_answer + "'" '\nLet\'s try again, ' + name + '!')
-            i = 0
-    print('Congratulations, ' + name + '!')
+        j += 1
+        questions.append(str(number))
+        correct_answers.append(correct_answer)
+
+    
+    engine(name = name, questions = questions, correct_answers = correct_answers)
  
 

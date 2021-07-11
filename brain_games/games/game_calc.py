@@ -1,42 +1,33 @@
 #!/usr/bin/env python
 import operator
-from random import randint, choice
+from random import choice
 
 import prompt
-
-
-def welcome():
-    name = prompt.string('Hello there!\nMay I have your name, friend?\nMy name is ')
-    print('Nice to meet you, ' + name + '!')
-    return name
+from brain_games.scripts.common_logic import (
+    count,
+    engine,
+    random_number,
+    welcome_user,
+)
 
 
 def calc_logic():
-    name = welcome()
-    i = 0
-    ops_list = (operator.add, operator.mul, operator.sub)
+    name = welcome_user()
+    j = 0
+    x = count()
+    questions = []
+    correct_answers = []
+    op_list = {
+        '+': operator.add ,
+        '*': operator.mul ,
+        "-": operator.sub 
+        }
     print('What is the result of the expression?')
-    for i in range(3):
-        number_1 = randint(1, 100)
-        number_2 = randint(1, 100)
-        current_operator = choice(ops_list)
-        if current_operator == operator.add:
-            question = (str(number_1) + ' + ' + str(number_2) + ' =')
-            correct_answer = number_1 + number_2
-        elif current_operator == operator.mul:
-            question = (str(number_1) + ' * ' + str(number_2) + ' =')
-            correct_answer = number_1 * number_2
-        else:
-            question = (str(number_1) + ' - ' + str(number_2) + ' =')
-            correct_answer = number_1 - number_2
-        print('Question: ' + str(question))
-        answer = prompt.string('Your answer: ')
-        if int(answer) == correct_answer:
-            print('Correct!')
-            i += 1
-        else:
-            print("'" + str(answer) + "' is the wrong answer :c. Correct answer was '" + str(correct_answer) + "'" )
-            return False
-    print('Congratulations, ' + name + '!')
+    for j in range(x):
+        number_1 = random_number()
+        number_2 = random_number()
+        op = choice(op_list) 
+        questions.append(str(number_1) + op + str(number_2))
+        correct_answers.append(op(number_1, number_2))
 
-        
+    engine(name = name, questions = questions, correct_answers = correct_answers)

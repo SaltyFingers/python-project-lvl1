@@ -30,5 +30,5 @@ def progression_logic():
         else:
             print("'" + str(answer) + "' is the wrong answer :c. Correct answer was '" + str(correct_answer) + "'" '\nLet\'s try again, ' + name + '!' )
             i = 0      
-    if i == 3:
-        print('Congratulations, ' + name + '!')
+    
+    print('Congratulations, ' + name + '!')
