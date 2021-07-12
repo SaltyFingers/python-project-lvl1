@@ -1,10 +1,11 @@
 import random
 
 import prompt
-from brain_games.games import *
+
 
 def welcome():
     print('Welcome to the Brain Games!')
+
 
 def welcome_user():
         name = prompt.string('May I have your name? ')
@@ -36,11 +37,12 @@ def engine(name, questions, correct_answers):
             index += 1
             current_round += 1
         else:
-            print("'" + str(answer) + "' is the wrong answer :c. Correct answer was '" + str(correct_answers[index]) + "'" '\nLet\'s try again, ' + name + '!' )
+            print("'" + str(answer) + "' is the wrong answer :c. Correct answer was '"\
+                 + str(correct_answers[index]) + "'" '\nLet\'s try again, ' + name + '!')
             return False
     if current_round == 3:
         print('Congratulations, ' + name + '!')
- 
+
 
 if __name__ == "__main__":
     engine()
