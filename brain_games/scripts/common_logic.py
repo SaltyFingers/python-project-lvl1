@@ -3,11 +3,12 @@ import random
 import prompt
 from brain_games.games import *
 
+def welcome():
+    print('Welcome to the Brain Games!')
 
 def welcome_user():
-        print('Welcome to the Brain Games!')
-        name = prompt.string('Hello there!\nMay I have your name, friend?\nMy name is ')
-        print('Nice to meet you, ' + name + '!')
+        name = prompt.string('May I have your name? ')
+        print('Hello, ' + name + '!')
         return name
 
 

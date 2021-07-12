@@ -3,8 +3,8 @@ import prompt
 
 
 def welcome_user():
-    name = prompt.string('Hello there!\nMay I have your name, friend?\nMy name is ')
-    print('Nice to meet you, ' + name + '!')
+    name = prompt.string('May I have your name? ')
+    print('Hello, ' + name + '!')
     return name 
 
 if __name__ == "__main__":
