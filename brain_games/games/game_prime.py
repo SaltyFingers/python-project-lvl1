@@ -19,7 +19,7 @@ def prime_logic():
     for j in range(x):
         number = random_number()
         questions.append(str(number))
-        
+
         def is_prime(number):
             d = 0
             for j in range(2, number // 2 + 1):

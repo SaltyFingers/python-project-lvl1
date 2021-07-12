@@ -8,9 +8,9 @@ def welcome():
 
 
 def welcome_user():
-        name = prompt.string('May I have your name? ')
-        print('Hello, ' + name + '!')
-        return name
+    name = prompt.string('May I have your name? ')
+    print('Hello, ' + name + '!')
+    return name
 
 
 def random_number():
@@ -37,8 +37,9 @@ def engine(name, questions, correct_answers):
             index += 1
             current_round += 1
         else:
-            print("'" + str(answer) + "' is the wrong answer :c. Correct answer was '"\
-                 + str(correct_answers[index]) + "'" '\nLet\'s try again, ' + name + '!')
+            print("'" + str(answer) + "' is the wrong answer :c.\
+            Correct answer was '" + str(correct_answers[index])\
+             + "'" '\nLet\'s try again, ' + name + '!')
             return False
     if current_round == 3:
         print('Congratulations, ' + name + '!')
