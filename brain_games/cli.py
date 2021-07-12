@@ -7,5 +7,6 @@ def welcome_user():
     print('Hello, ' + name + '!')
     return name
 
+
 if __name__ == "__main__":
     welcome_user()
