@@ -19,9 +19,9 @@ def calc_logic():
     questions = []
     correct_answers = []
     operators = {
-        '+': operator.add,
-        '*': operator.mul,
-        "-": operator.sub,
+        ' + ': operator.add,
+        ' * ': operator.mul,
+        " - ": operator.sub,
     }
     operators_list = list(operators.keys())
     print('What is the result of the expression?')
