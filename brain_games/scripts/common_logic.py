@@ -39,7 +39,7 @@ def engine(name, questions, correct_answers):
         else:
             print("'" + str(answer) + "' is the wrong answer :c.\
             Correct answer was '" + str(correct_answers[index]) + "'"
-                                   '\nLet\'s try again, ' + name + '!')
+                                 '\nLet\'s try again, ' + name + '!')
             return False
     if current_round == 3:
         print('Congratulations, ' + name + '!')
