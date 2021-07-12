@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from brain_games.game_prime import prime_logic
+from brain_games.games.game_prime import prime_logic
 
 
 def main():

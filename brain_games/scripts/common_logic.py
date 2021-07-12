@@ -28,6 +28,8 @@ def engine(name, questions, correct_answers):
     for current_round in range(rounds):
         print('Question: ' + str(questions[index]))
         answer = prompt.string('Your answer: ')
+        if isinstance(correct_answers[index], int):
+            answer = int(answer)
         if answer == correct_answers[index]:
             print('Correct!')
             index += 1
