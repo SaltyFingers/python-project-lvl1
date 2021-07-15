@@ -1,34 +1,29 @@
 #!/usr/bin/env python
-import random
-
-from brain_games.scripts.common_logic import (
-    count,
-    engine,
-    random_number,
-    welcome,
-    welcome_user,
-)
+from random import randint
 
 
 def progression_logic():
-    welcome()
-    name = welcome_user()
-    j = 0
-    x = count()
-    questions = []
-    correct_answers = []
-    print('What number is missing in the progression?')
-    for j in range(x):
-        first_number = random_number()
-        delta = random.randint(1, 20)
-        random_index = random.randint(0, 9)
-        element = first_number
-        progression = [str(first_number)]
-        for x in range(9):
-            element = element + delta
-            progression.append(str(element))
-        correct_answers.append(progression[random_index])
-        progression[random_index] = '..'
-        progression = " ".join(progression)
-        questions.append(str(progression))
-    engine(name=name, questions=questions, correct_answers=correct_answers)
+    task = 'What number is missing in the progression?'
+    first_number = randint(1, 100)
+    delta = randint(1, 20)
+    random_index = randint(0, 9)
+    element = first_number
+    progression = [str(first_number)]
+    for x in range(9):
+        element = element + delta
+        progression.append(str(element))
+    correct_answer = progression[random_index]
+    progression[random_index] = '..'
+    progression = " ".join(progression)
+    question = str(progression)
+    game = {
+        'task': task,
+        'question': question,
+        'correct_answer': correct_answer,
+    }
+    return game
+
+
+if __name__ == '__main':
+    progression_logic()
+   
