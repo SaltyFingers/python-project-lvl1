@@ -3,7 +3,7 @@ from random import randint
 
 
 def progression_logic():
-    task = 'What number is missing in the progression?'
+    TASK = 'What number is missing in the progression?'
     first_number = randint(1, 100)
     delta = randint(1, 20)
     random_index = randint(0, 9)

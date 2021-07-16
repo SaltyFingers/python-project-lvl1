@@ -10,7 +10,7 @@ def calc_logic():
         " - ": operator.sub,
     }
     operators_list = list(operators.keys())
-    task = 'What is the result of the expression?'
+    TASK = 'What is the result of the expression?'
     number_1 = randint(1, 100)
     number_2 = randint(1, 100)
     operator_key = choice(operators_list)
@@ -26,4 +26,4 @@ def calc_logic():
 
 
 if __name__ == '__main__':
-    game_logic()
+    calc_logic()

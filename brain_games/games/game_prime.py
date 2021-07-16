@@ -3,7 +3,7 @@ from random import randint
 
 
 def prime_logic():
-    task = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".'
     number = randint(1, 100)
     question = str(number)
     def is_prime(number):

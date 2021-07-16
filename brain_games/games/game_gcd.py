@@ -2,7 +2,7 @@
 from random import randint
 
 def gcd_logic():
-    task = 'Find the greatest common divisor of given numbers.'
+    TASK = 'Find the greatest common divisor of given numbers.'
     number_1 = randint(1, 100)
     number_2 = randint(1, 100)
     question = str(number_1) + ' ' + str(number_2)
@@ -21,4 +21,4 @@ def gcd_logic():
 
 
 if __name__ == '__main__':
-    game_logic()
+    gcd_logic()
