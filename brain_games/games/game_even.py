@@ -1,35 +1,19 @@
-#!/usr/bin/env python
+ #!/usr/bin/env python
 from random import randint
 
-from brain_games.scripts.common_logic import random_number
-
-questions = []
-correct_answers = []
+from brain_games.scripts.common_logic import engine
 
 TASK = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-number = random_number()
+def question():
+    return randint(1, 100)
+  
 
-def question_func():
-    question = str(number)
-    return question
-    
-
-
-def answer_func():
-
-    if number % 2 == 0:
+def answer():
+    if question() % 2 == 0:
         correct_answer = 'yes'
     else:
         correct_answer = 'no'
     return correct_answer
-# return task_funk, question_func, answer_func
 
-
-
-# if __name__ == '__main__':
-#     rand_num()
-#     task_func()
-#     question_func()
-#     answer_func()
