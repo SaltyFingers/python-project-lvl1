@@ -2,28 +2,34 @@
 import operator
 from random import choice, randint
 
+TASK = 'What is the result of the expression?'
+operators = {
+    '+' : operator.add,
+    '*': operator.mul,
+    "-": operator.sub,
+}
+operators_list = list(operators.keys())
 
-def calc_logic():
-    operators = {
-        ' + ': operator.add,
-        ' * ': operator.mul,
-        " - ": operator.sub,
-    }
-    operators_list = list(operators.keys())
-    TASK = 'What is the result of the expression?'
+
+def question_generation():
     number_1 = randint(1, 100)
     number_2 = randint(1, 100)
     operator_key = choice(operators_list)
-    current_operator = operators.get(operator_key)
-    question = str(number_1) + operator_key + str(number_2)
-    correct_answer = current_operator(number_1, number_2)
-    game = {
-        'task': task,
-        'question': question,
-        'correct_answer': correct_answer,
-    }
-    return game
+    question = number_1, operator_key, number_2
+    return question
 
 
-if __name__ == '__main__':
-    calc_logic()
+def answer(question):
+    current_operator = operators.get(question[1])
+    correct_answer = current_operator(question[0], question[2])
+    return correct_answer
+
+
+def question(question):
+    question = '{} {} {}'.format(question[0], question[1], question[2])
+    return question
+
+
+
+
+ 
