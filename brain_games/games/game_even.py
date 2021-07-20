@@ -1,11 +1,11 @@
- #!/usr/bin/env python
+#!/usr/bin/env python
 from random import randint
 
 TASK = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def question_generation():
-    return  randint(1, 100)
+    return randint(1, 100)
 
 
 def question(question):

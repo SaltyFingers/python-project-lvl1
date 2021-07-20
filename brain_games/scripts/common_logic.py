@@ -1,7 +1,5 @@
-
-
+#!/usr/bin/env python
 import prompt
-
 
 ROUNDS = 3
 
@@ -14,6 +12,7 @@ def welcome_user():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     return name
+
 
 def engine(game):
     welcome()

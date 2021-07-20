@@ -2,7 +2,7 @@
 from random import randint
 
 TASK = 'What number is missing in the progression?'
-    
+
 
 def question_generation():
     first_number = randint(1, 100)
@@ -17,10 +17,10 @@ def question_generation():
     return [progression, random_index, answer]
 
 
-def question(question):    
+def question(question):
     question[0][question[1]] = '..'
     question[0] = " ".join(question[0])
-    return str(question[0])  
+    return str(question[0])
 
 
 def answer(question):
