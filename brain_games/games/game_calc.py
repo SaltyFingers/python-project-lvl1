@@ -4,7 +4,7 @@ from random import choice, randint
 
 TASK = 'What is the result of the expression?'
 operators = {
-    '+' : operator.add,
+    '+': operator.add,
     '*': operator.mul,
     "-": operator.sub,
 }
