@@ -8,15 +8,13 @@ def question_generation():
     return  randint(1, 100)
 
 
+def question(question):
+    return str(question)
+
+
 def answer(question):
-    
     if question % 2 == 0:
         correct_answer = 'yes'
     else:
         correct_answer = 'no'
     return correct_answer
-
-
-def question(question):
-    return str(question)
-        

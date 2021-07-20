@@ -1,24 +1,24 @@
 #!/usr/bin/env python
 from random import randint
 
-def gcd_logic():
-    TASK = 'Find the greatest common divisor of given numbers.'
+
+TASK = 'Find the greatest common divisor of given numbers.'
+
+
+def question_generation():
     number_1 = randint(1, 100)
-    number_2 = randint(1, 100)
-    question = str(number_1) + ' ' + str(number_2)
-    while number_1 != number_2:
-        if number_1 > number_2:
-            number_1 = number_1 - number_2
+    number_2 = randint(1, 101)
+    return [number_1, number_2]
+
+
+def answer(question):
+    while question[0] != question[1]:
+        if question[0] > question[1]:
+            question[0] = question[0] - question[1]
         else:
-            number_2 = number_2 - number_1
-    correct_answer = number_1
-    game = {
-        'task': task,
-        'question': question,
-        'correct_answer': correct_answer,
-    }
-    return game
+            question[1] = question[1] - question[0]
+    return question[0]
 
 
-if __name__ == '__main__':
-    gcd_logic()
+def question(question):
+    return '{} {}'.format(question[0], question[1])

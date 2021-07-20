@@ -21,8 +21,8 @@ def engine(game):
     print(game.TASK)
     for current_round in range(ROUNDS):
         question_generation = game.question_generation()
-        correct_answer = game.answer(question_generation)
         question = game.question(question_generation)
+        correct_answer = game.answer(question_generation)
         print('Question: ' + str(question))
         answer = prompt.string('Your answer: ')
         if isinstance(correct_answer, int):
