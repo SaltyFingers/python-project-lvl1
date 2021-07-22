@@ -30,5 +30,5 @@ def engine(game):
 Correct answer was '" + correct_answer + "'\
 \nLet\'s try again, " + name + '!')
             break
-    if current_round == 3:
-        print('Congratulations, ' + name + '!')
+        if current_round == ROUNDS - 1:
+            print('Congratulations, ' + name + '!')
