@@ -11,20 +11,9 @@ operators = {
 operators_list = list(operators.keys())
 
 
-def question_generation():
-    number_1 = randint(1, 100)
-    number_2 = randint(1, 100)
+def game_logic():
+    number_1, number_2 = randint(1, 100), randint(1, 100)
     operator_key = choice(operators_list)
-    question = number_1, operator_key, number_2
-    return question
-
-
-def question(question):
-    question = '{} {} {}'.format(question[0], question[1], question[2])
-    return question
-
-
-def answer(question):
-    current_operator = operators.get(question[1])
-    correct_answer = current_operator(question[0], question[2])
-    return correct_answer
+    current_operator = operators.get(operator_key)
+    question = '{} {} {}'.format(number_1, operator_key, number_2)
+    return question, str(current_operator(number_1, number_2))

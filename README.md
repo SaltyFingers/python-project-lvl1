@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/SaltyFingers/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/SaltyFingers/python-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fb12f13dfac6a6adf70d/maintainability)](https://codeclimate.com/github/SaltyFingers/python-project-lvl1/maintainability)
 [![Python CI](https://github.com/SaltyFingers/python-project-lvl1/actions/workflows/lint-test.yml/badge.svg)](https://github.com/SaltyFingers/python-project-lvl1/actions/workflows/lint-test.yml)
 [![asciicast](https://asciinema.org/a/RdiLfp4h98X7KYsI9jMD4dxwi.svg)](https://asciinema.org/a/RdiLfp4h98X7KYsI9jMD4dxwi)
 [![asciicast](https://asciinema.org/a/yyxSCNw7XvBCAPYYMW5VjXaiJ.svg)](https://asciinema.org/a/yyxSCNw7XvBCAPYYMW5VjXaiJ)

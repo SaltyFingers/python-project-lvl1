@@ -1,24 +1,15 @@
 #!/usr/bin/env python
 from random import randint
 
-
 TASK = 'Find the greatest common divisor of given numbers.'
 
 
-def question_generation():
-    number_1 = randint(1, 100)
-    number_2 = randint(1, 101)
-    return [number_1, number_2]
-
-
-def answer(question):
-    while question[0] != question[1]:
-        if question[0] > question[1]:
-            question[0] = question[0] - question[1]
+def game_logic():
+    number_1, number_2 = randint(1, 100), randint(1, 100)
+    question = '{} {}'.format(number_1, number_2)
+    while number_1 != number_2:
+        if number_1 > number_2:
+            number_1 = number_1 - number_2
         else:
-            question[1] = question[1] - question[0]
-    return question[0]
-
-
-def question(question):
-    return '{} {}'.format(question[0], question[1])
+            number_2 = number_2 - number_1
+    return str(question), str(number_1)

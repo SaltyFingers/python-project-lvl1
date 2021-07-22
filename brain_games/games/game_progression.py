@@ -4,7 +4,7 @@ from random import randint
 TASK = 'What number is missing in the progression?'
 
 
-def question_generation():
+def game_logic():
     first_number = randint(1, 100)
     delta = randint(1, 50)
     random_index = randint(0, 9)
@@ -13,15 +13,7 @@ def question_generation():
     for x in range(9):
         element = element + delta
         progression.append(str(element))
-    answer = progression[random_index]
-    return [progression, random_index, answer]
-
-
-def question(question):
-    question[0][question[1]] = '..'
-    question[0] = " ".join(question[0])
-    return str(question[0])
-
-
-def answer(question):
-    return question[2]
+    correct_answer = progression[random_index]
+    progression[random_index] = '..'
+    progression = " ".join(progression)
+    return progression, correct_answer

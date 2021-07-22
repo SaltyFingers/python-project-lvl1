@@ -19,22 +19,16 @@ def engine(game):
     name = welcome_user()
     print(game.TASK)
     for current_round in range(ROUNDS):
-        question_generation = game.question_generation()
-        question = game.question(question_generation)
-        correct_answer = game.answer(question_generation)
-        print('Question: ' + str(question))
+        game_data = game.game_logic()
+        question, correct_answer = game_data[0], game_data[1]
+        print('Question: ' + question)
         answer = prompt.string('Your answer: ')
-        if isinstance(correct_answer, int):
-            answer = int(answer)
-        else:
-            answer = str(answer)
         if answer == correct_answer:
             print('Correct!')
-            current_round += 1
         else:
-            print("'" + str(answer) + "' is the wrong answer :c. \
-Correct answer was '" + str(correct_answer) + "'\
+            print("'" + answer + "' is the wrong answer :c. \
+Correct answer was '" + correct_answer + "'\
 \nLet\'s try again, " + name + '!')
-            return False
+            break
     if current_round == 3:
         print('Congratulations, ' + name + '!')

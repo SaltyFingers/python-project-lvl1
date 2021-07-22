@@ -1,6 +1,6 @@
 *.egg-info
-__pycache__
-dist/
+*/__pycache__
+/python-project-lvl1/dist/
 *.pyc
 .venv/
 .coverage
