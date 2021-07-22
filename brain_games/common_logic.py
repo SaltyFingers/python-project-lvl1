@@ -19,7 +19,7 @@ def engine(game):
     name = user_name()
     print(game.TASK)
     right_answers = 0
-    for current_round in range(ROUNDS):
+    for i in range(ROUNDS):
         game_data = game.game_logic()
         question, correct_answer = game_data[0], game_data[1]
         print('Question: ' + question)
