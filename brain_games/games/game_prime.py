@@ -6,7 +6,7 @@ TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 def is_prime(number):
     x = 0
-    if number <2:
+    if number < 2:
         correct_answer = 'no'
     for j in range(2, number // 2 + 1):
         if (number % j == 0):
