@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 import prompt
 
-from brain_games.cli import user_name
-
 ROUNDS = 3
 
 
 def welcome():
     print('Welcome to the Brain Games!')
+
+
+def user_name():
+    name = prompt.string('May I have your name? ')
+    print('Hello, ' + name + '!')
+    return name
 
 
 def is_right(game, name):

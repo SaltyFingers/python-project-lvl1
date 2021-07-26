@@ -2,11 +2,11 @@
 import prompt
 
 
-def user_name():
+def welcome_user():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     return name
 
 
 if __name__ == "__main__":
-    user_name()
+    welcome_user()
