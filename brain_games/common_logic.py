@@ -12,12 +12,9 @@ def user_name():
     name = prompt.string('May I have your name? ')
     print('Hello, ' + name + '!')
     return name
-    
 
-def engine(game):
-    welcome()
-    name = user_name()
-    print(game.TASK)
+
+def is_right(game, name):
     for i in range(ROUNDS):
         game_data = game.game_logic()
         question, correct_answer = game_data[0], game_data[1]
@@ -30,5 +27,11 @@ def engine(game):
 Correct answer was '" + correct_answer + "'\
 \nLet\'s try again, " + name + '!')
             return False
-    if not False:
+
+
+def engine(game):
+    welcome()
+    name = user_name()
+    print(game.TASK)
+    if is_right(game, name) is not False:
         print('Congratulations, ' + name + '!')
