@@ -20,7 +20,7 @@ def run_engine(game):
     print(game.TASK)
     for i in range(ROUNDS):
         question, correct_answer = game.game_logic()
-        print(f'Quesion: {question}')
+        print(f'Question: {question}')
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:
             print('Correct!')

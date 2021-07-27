@@ -6,10 +6,10 @@ DEVIDER = 2
 
 
 def is_even(number):
-    if number % DEVIDER == 0:
-        return True
-    else:
-        return False
+    return True if number % DEVIDER == 0 else False
+    #     return True
+    # else:
+    #     return False
 
 
 def game_logic():

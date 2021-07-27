@@ -7,13 +7,12 @@ FIRST_PRIME_NUMBER = 2
 
 def is_prime(number):
     x = 0
+    if number < FIRST_PRIME_NUMBER:
+        return False
     for i in range(FIRST_PRIME_NUMBER, number // FIRST_PRIME_NUMBER + 1):
         if (number % i == 0):
             x += 1
-    if x <= 0 and number > FIRST_PRIME_NUMBER:
-        return True
-    else:
-        return False
+    return True if x <= 0 else False
 
 
 def game_logic():
