@@ -2,16 +2,17 @@
 from random import randint
 
 TASK = 'Answer "yes" if the number is even, otherwise answer "no".'
+DEVIDER = 2
 
 
 def is_even(number):
-    if number % 2 == 0:
-        correct_answer = 'yes'
+    if number % DEVIDER == 0:
+        return True
     else:
-        correct_answer = 'no'
-    return correct_answer
+        return False
 
 
 def game_logic():
     number = randint(1, 100)
-    return str(number), str(is_even(number))
+    correct_answer = 'yes' if is_even(number) else 'no'
+    return str(number), str(correct_answer)

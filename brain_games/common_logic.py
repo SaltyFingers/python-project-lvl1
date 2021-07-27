@@ -4,34 +4,28 @@ import prompt
 ROUNDS = 3
 
 
-def welcome():
+def greeting():
     print('Welcome to the Brain Games!')
 
 
-def user_name():
+def get_name():
     name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
+    print(f'Hello, {name}! ')
     return name
 
 
-def is_right(game, name):
+def run_engine(game):
+    greeting()
+    name = get_name()
+    print(game.TASK)
     for i in range(ROUNDS):
-        game_data = game.game_logic()
-        question, correct_answer = game_data[0], game_data[1]
-        print('Question: ' + question)
+        question, correct_answer = game.game_logic()
+        print(f'Quesion: {question}')
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:
             print('Correct!')
         else:
-            print("'" + answer + "' is the wrong answer :c. \
-Correct answer was '" + correct_answer + "'\
-\nLet\'s try again, " + name + '!')
-            return False
-
-
-def engine(game):
-    welcome()
-    name = user_name()
-    print(game.TASK)
-    if is_right(game, name) is not False:
-        print('Congratulations, ' + name + '!')
+            print(f"'{answer}' is the wrong answer :c. Correct answer was '{correct_answer}'\n\
+Let's try again, {name}!")
+            return
+    print(f'Congratulations, {name}!')

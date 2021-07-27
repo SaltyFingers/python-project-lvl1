@@ -2,19 +2,23 @@
 from random import randint
 
 TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+FIRST_PRIME_NUMBER = 2
 
 
 def is_prime(number):
     x = 0
-    if number < 2:
-        correct_answer = 'no'
-    for j in range(2, number // 2 + 1):
-        if (number % j == 0):
+    if number < FIRST_PRIME_NUMBER:
+        return False
+    for i in range(FIRST_PRIME_NUMBER, number // FIRST_PRIME_NUMBER + 1):
+        if (number % i == 0):
             x += 1
-    correct_answer = 'yes' if x <= 0 else 'no'
-    return correct_answer
+    if x <= 0:
+        return True
+    else:
+        return False
 
 
 def game_logic():
     number = randint(1, 100)
-    return str(number), str(is_prime(number))
+    correct_answer = 'yes' if is_prime(number) else 'no'
+    return str(number), str(correct_answer)
