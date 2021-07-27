@@ -25,4 +25,4 @@ def game_logic():
     random_index = randint(0, PROGRESSION_LENGHT)
     progression = progression_fill(first_number, difference)
     correct_answer = progression[random_index]
-    return str(get_progression_string(progression, random_index)), correct_answer
+    return get_progression_string(progression, random_index), correct_answer
