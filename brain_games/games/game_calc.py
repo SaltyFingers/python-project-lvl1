@@ -11,7 +11,7 @@ operators = {
 operator_symbols_list = list(operators.keys())
 
 
-def game_logic():
+def run_game():
     number_1, number_2 = randint(1, 100), randint(1, 100)
     operator_symbol = choice(operator_symbols_list)
     current_operator = operators.get(operator_symbol)

@@ -13,7 +13,7 @@ def gcd_calculation(number_1, number_2):
     return number_1
 
 
-def game_logic():
+def run_game():
     number_1, number_2 = randint(1, 100), randint(1, 100)
     question = f'{number_1} {number_2}'
     return str(question), str(gcd_calculation(number_1, number_2))

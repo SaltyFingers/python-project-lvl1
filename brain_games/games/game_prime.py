@@ -15,7 +15,7 @@ def is_prime(number):
     return True if x <= 0 else False
 
 
-def game_logic():
+def run_game():
     number = randint(1, 100)
     correct_answer = 'yes' if is_prime(number) else 'no'
     return str(number), str(correct_answer)
