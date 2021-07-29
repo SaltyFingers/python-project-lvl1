@@ -2,27 +2,29 @@
 from random import randint
 
 TASK = 'What number is missing in the progression?'
-PROGRESSION_LENGHT = 9
+PROGRESSION_LENGHT = 10
 
 
-def add_progression_member(member, difference):
-    progression = [str(member)]
+def add_progression_member(initial_term, difference):
+    member, progression = initial_term, [initial_term]
     for i in range(PROGRESSION_LENGHT):
         member += difference
-        progression.append(str(member))
+        progression.append(member)
     return progression
 
 
-def get_string_from_progression(progression, random_index):
-    progression[random_index] = '..'
-    return " ".join(progression)
+def get_string_from_progression(progression, random_number):
+    progression_string = []
+    for index in range(0, PROGRESSION_LENGHT):
+        progression_string.append(str(progression[index]))
+    progression_string[random_number] = '..'
+    return " ".join(progression_string)
 
 
 def run_game():
-    member = randint(1, 100)
+    initial_term = randint(1, 100)
     difference = randint(1, 50)
-    random_index = randint(0, PROGRESSION_LENGHT)
-    progression = add_progression_member(member, difference)
-    correct_answer = progression[random_index]
-    return (get_string_from_progression(progression, random_index),
-            correct_answer)
+    random_number = randint(0, PROGRESSION_LENGHT - 1)
+    progression = add_progression_member(initial_term, difference)
+    return (get_string_from_progression(progression, random_number),
+            str(progression[random_number]))
