@@ -15,8 +15,8 @@ def add_progression_member(initial_term, difference):
 
 def get_string_from_progression(progression, random_number):
     progression_string = []
-    for index in range(0, PROGRESSION_LENGHT):
-        progression_string.append(str(progression[index]))
+    for member in range(0, PROGRESSION_LENGHT):
+        progression_string.append(str(progression[member]))
     progression_string[random_number] = '..'
     return " ".join(progression_string)
 
