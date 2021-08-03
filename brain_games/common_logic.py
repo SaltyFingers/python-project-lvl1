@@ -19,7 +19,7 @@ def run_engine(game):
     name = get_name()
     print(game.TASK)
     for i in range(ROUNDS):
-        question, correct_answer = game.run_game()
+        question, correct_answer = game.get_round()
         print(f'Question: {question}')
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:
