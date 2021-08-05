@@ -11,7 +11,9 @@ def is_prime(number):
     if number < FIRST_PRIME_NUMBER:
         return False
     for i in range(FIRST_PRIME_NUMBER, number // 2 + 1):
-        return False if (number % i == 0) else True
+        if number % i == 0:
+            return False
+    return True
 
 
 def get_round():
